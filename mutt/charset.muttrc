@@ -1,0 +1,14 @@
+
+# locale
+set charset = UTF-8
+# hook charset
+charset-hook !UTF-8 gbk
+charset-hook "^us-ascii$" "utf-8"
+# send charset
+set send_charset="us-ascii:iso-8859-1:utf-8:gbk"
+set rfc2047_parameters=yes
+# 定义别名的字符集
+charset-hook alias charset 
+iconv-hook charset local-charset
+
+# vim: filetype=muttrc

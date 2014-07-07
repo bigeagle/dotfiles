@@ -1,0 +1,27 @@
+color normal white black
+color hdrdefault red black
+color quoted yellow black
+color signature red black
+color indicator black green
+color error brightred black
+color status yellow blue
+color tree magenta black	# the thread tree in the index menu
+color tilde magenta black
+color message brightcyan black
+color markers brightcyan black
+color attachment brightmagenta black
+color search black green	# how to hilite search patterns in the pager
+
+color header brightred default ^(From|Subject):
+# color body brightblue black "(ftp|http)://[^ ]+"	# point out URLs
+
+# email addresses
+color body brightblue  black "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
+mono  body bold              "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
+
+# color underline brightgreen black
+color index yellow default ~p              # 发给我的，黄色
+color index blue default ~P                # 我发的，蓝色
+color index brightyellow default ~N        # 新的，黄色粗体
+color index brightgreen default "~N ~p"    # 新发给我的，绿色粗体
+# vim: filetype=muttrc
