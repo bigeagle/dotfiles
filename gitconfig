@@ -1,0 +1,32 @@
+[user]
+	name = bigeagle
+	email = justin.w.xd@gmail.com
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+[alias]
+  co = checkout
+  ci = commit -a
+  st = status
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+
+[merge]
+    #tool = fugitive
+    tool = meld
+[core]
+	editor = vim
+	excludesfile = /home/bigeagle/.gitignore
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 744x617+2+54
+	history-view-vpane-position = 440
+	main-window-view = HistoryView
+[diff]
+    #tool = vimdiff
+    tool = meld
+[mergetool]
+    keepBackup = false
+[mergetool "fugitive"]
+	cmd = vim -f -c \"Gdiff\" \"$MERGED\"
