@@ -1,10 +1,10 @@
-color normal white black
+color normal white default
 color hdrdefault red black
 color quoted yellow black
 color signature red black
 color indicator black green
 color error brightred black
-color status yellow blue
+color status white blue
 color tree magenta black	# the thread tree in the index menu
 color tilde magenta black
 color message brightcyan black
