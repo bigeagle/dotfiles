@@ -1,0 +1,86 @@
+### Conky configuration file
+## Output is printed to the console -> i3bar
+
+## No output to X <yes/no>
+out_to_x no
+
+## Create own window to draw <yes/no>
+own_window no
+
+## Print everything to console?
+out_to_console yes
+
+## Use double buffering (reduces flicker, not needed for console output)
+double_buffer no
+
+## Set to yes if you want Conky to be forked in the background
+background no
+
+## Update interval in seconds
+update_interval 1
+
+## This is the number of times Conky will update before quitting.
+## Set to zero to run forever.
+total_run_times 0
+
+## Shortens units to a single character (kiB->k, GiB->G, etc.). Default is off.
+short_units yes
+
+## How strict should if_up be when testing an interface for being up?
+## The value is one of up, link or address, to check for the interface
+## being solely up, being up and having link or being up, having link
+## and an assigned IP address.
+if_up_strictness address
+
+## Add spaces to keep things from moving about? This only affects certain objects.
+## use_spacer should have an argument of left, right, or none
+use_spacer none
+
+## Force UTF8? note that UTF8 support required XFT
+override_utf8_locale no
+
+## number of cpu samples to average
+## set to 1 to disable averaging
+cpu_avg_samples 2
+
+pad_percents 2
+
+## Stuff after 'TEXT' will be formatted on screen
+TEXT
+
+# JSON for i3bar
+[
+    {
+        "full_text": "CPU: ${cpu cpu1}% ${cpu cpu2}% ${cpu cpu3}% ${cpu cpu4}%",
+        "color":
+            ${if_match ${cpu cpu0}>90}"\#ff543e"${else}${if_match ${cpu cpu0}<10}"\#7be67b"${else}"\#dde98b"${endif}${endif}
+    },
+    {
+        "full_text": "RAM: ${mem}/${memmax}",
+        "color": ${if_match ${memperc}>80}"\#f24c2e"${else}${if_match ${memperc}<10}"\#b2e49f"${else}"\#dde98b"${endif}${endif}
+    },
+    {
+        "full_text": "Temp: ${exec sensors | grep 'Physical' | cut -c18-19 }°C",
+        "color": ${if_match ${exec sensors | grep 'Physical' | cut -c18-19 }>65}"\#ea4713"${else}"\#81e0ff"
+    },
+    {
+        "full_text": "Up: ${uptime_short}",
+        "color": "\#94a8f2"
+    },
+    {
+        "full_text": "HDD:${fs_free /}",
+        "color": "\#c594f2"
+    },
+    {
+        "full_text": "eno1: ${downspeed eno1}↓ ${upspeed eno1}↑",
+        "color": "\#ffc6e2"
+    },
+    {
+        "full_text": "wpl2s0: ${downspeed wlp2s0}↓ ${upspeed wlp2s0}↑",
+        "color": "\#ffd2c0"
+    },
+    {
+        "full_text": "${time %Y-%m-%d %H:%M:%S %a}",
+        "color": "\#fffad0"
+    }
+],
