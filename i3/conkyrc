@@ -52,12 +52,11 @@ TEXT
 [
     {
         "full_text": "CPU: ${cpu cpu1}% ${cpu cpu2}% ${cpu cpu3}% ${cpu cpu4}%",
-        "color":
-            ${if_match ${cpu cpu0}>90}"\#ff543e"${else}${if_match ${cpu cpu0}<10}"\#7be67b"${else}"\#dde98b"${endif}${endif}
+        "color": ${if_match ${cpu cpu0}>90}"\#ff543e"${else}${if_match ${cpu cpu0}<10}"\#7be67b"${else}"\#e9df8b"${endif}${endif}
     },
     {
         "full_text": "RAM: ${mem}/${memmax}",
-        "color": ${if_match ${memperc}>80}"\#f24c2e"${else}${if_match ${memperc}<10}"\#b2e49f"${else}"\#dde98b"${endif}${endif}
+        "color": ${if_match ${memperc}>80}"\#f24c2e"${else}${if_match ${memperc}<20}"\#b2e49f"${else}"\#dde98b"${endif}${endif}
     },
     {
         "full_text": "Temp: ${exec sensors | grep 'Physical' | cut -c18-19 }°C",
