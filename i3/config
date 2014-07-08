@@ -92,6 +92,7 @@ bindsym $mod+F2 workspace F2
 bindsym $mod+F3 workspace F3
 bindsym $mod+F4 workspace F4
 bindsym $mod+F5 workspace F5
+bindsym $mod+minus scratchpad show
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -104,6 +105,7 @@ bindsym $mod+Shift+F2 move container to workspace F2
 bindsym $mod+Shift+F3 move container to workspace F3
 bindsym $mod+Shift+F4 move container to workspace F4
 bindsym $mod+Shift+F5 move container to workspace F5
+bindsym $mod+Shift+minus move scratchpad
 
 # reload the configuration file
 bindsym $mod+Shift+r reload
@@ -122,9 +124,9 @@ client.focused          #2d2d2d #2d2d2d #f9f9f9 #d64937
 client.focused_inactive #333333 #3d3d3d #ffffff #484e50
 client.unfocused        #1d1d1d #1d1d1d #555555 #292d2e
 client.urgent           #d64937 #d64937 #ffffff #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000
 
-
+for_window [window_role="pop-up"] floating enable
+for_window [class="Xfce4-notifyd"] floating enable
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
