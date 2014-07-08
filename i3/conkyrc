@@ -60,7 +60,7 @@ TEXT
     },
     {
         "full_text": "Temp: ${exec sensors | grep 'Physical' | cut -c18-19 }°C",
-        "color": ${if_match ${exec sensors | grep 'Physical' | cut -c18-19 }>65}"\#ea4713"${else}"\#81e0ff"
+        "color": ${if_match ${exec sensors | grep 'Physical' | cut -c18-19 }>65}"\#ea4713"${else}"\#81e0ff"${endif}
     },
     {
         "full_text": "Up: ${uptime_short}",
