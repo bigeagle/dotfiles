@@ -170,6 +170,7 @@ bindsym $mod+r mode "resize"
 bar {
     status_command ~/.i3/i3-conky.sh
     font pango:DejaVu Sans Mono 9
+    tray_output eDP1
     
     colors {
         background #000000
