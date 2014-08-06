@@ -2,6 +2,7 @@
 # List of accounts to be synced, separated by a comma.
 accounts = gmail
 ui = basic
+socktimeout = 10
 
 [Account gmail]
 # Identifier for the local repository; e.g. the maildir to be synced via IMAP.
@@ -13,7 +14,7 @@ status_backend = sqlite
 autorefresh = 3
 # Number of quick-syncs between autorefreshes. Quick-syncs do not update if the
 # only changes were to IMAP flags
-quick = 10
+# quick = 10
 
 [Repository gmail-local]
 # Currently, offlineimap only supports maildir and IMAP for local repositories.

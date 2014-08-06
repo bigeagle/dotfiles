@@ -5,8 +5,8 @@ color signature red black
 color indicator black green
 color error brightred black
 color status white blue
-color tree magenta black	# the thread tree in the index menu
-color tilde magenta black
+color tree magenta default	# the thread tree in the index menu
+color tilde magenta default
 color message brightcyan black
 color markers brightcyan black
 color attachment brightmagenta black
