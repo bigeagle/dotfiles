@@ -21,9 +21,9 @@ autorefresh = 3
 type = Maildir
 # Where should the mail be placed?
 localfolders = ~/.mail/gmail
-nametrans = lambda folder: re.sub("^\[Gmail\]/Spam$", "spam", 
-                           re.sub("^\[Gmail\]/Drafts$", "drafts",
-                           re.sub("^\[Gmail\]/Sent Mail$", "sent", folder)))
+nametrans = lambda folder: re.sub("spam", "[Gmail]/Spam", 
+                           re.sub("drafts", "[Gmail]/Drafts",
+                           re.sub("sent", "[Gmail]/Sent Mail", folder)))
 
 [Repository gmail-remote]
 # Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
@@ -31,10 +31,9 @@ type = Gmail
 remoteuser = username
 remotepass = password
 folderfilter = lambda foldername: foldername in ['INBOX', 'SMS', '[Gmail]/Sent Mail', '[Gmail]/Spam', '[Gmail]/Drafts']
-nametrans = lambda folder: re.sub("spam", "[Gmail]/Spam", 
-                           re.sub("drafts", "[Gmail]/Drafts",
-                           re.sub("sent", "[Gmail]/Sent Mail", folder)))
-
+nametrans = lambda folder: re.sub("^\[Gmail\]/Spam$", "spam", 
+                           re.sub("^\[Gmail\]/Drafts$", "drafts",
+                           re.sub("^\[Gmail\]/Sent Mail$", "sent", folder)))
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 maxconnections = 3
 keepalive = 30
