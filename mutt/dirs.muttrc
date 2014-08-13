@@ -2,10 +2,9 @@ set mbox_type   = Maildir
 
 set folder      = ~/.mail/gmail
 set spoolfile   = "+INBOX"
-set mbox        = "+[Gmail]/All Mail"
-set postponed   = "+[Gmail]/Drafts"
+set postponed   = "+drafts"
 unset record
 
-mailboxes "+INBOX" "+[Gmail].Drafts" "+[Gmail].Sent Mail" "[Gmail].Spam"
+mailboxes "+INBOX" "+drafts" "+sent" "+spam"
 
 # vim: filetype=muttrc

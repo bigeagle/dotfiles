@@ -3,10 +3,11 @@
 #     "move message to the trash"
 
 macro index S \
-    "<save-message>+[Gmail]/Spam<enter>" \
+    "<save-message>+spam<enter>" \
     "mark message as spam"
 
 bind index gg first-entry
+bind index G last-entry
 bind pager j next-line
 bind pager k previous-line
 bind pager gg top
@@ -15,6 +16,7 @@ bind index,pager r group-reply
 bind index,pager R reply
 
 macro index,pager,attach gi "<change-folder>=INBOX<enter>" "Go to inbox"
-macro index,pager,attach gd "<change-folder>=[Gmail].Drafts<enter>" "Go to drafts"
+macro index,pager,attach gs "<change-folder>=sent<enter>" "Go to inbox"
+macro index,pager,attach gd "<change-folder>=drafts<enter>" "Go to drafts"
 
 # vim: filetype=muttrc

@@ -8,6 +8,7 @@ auto_view image/*
 alternative_order text/plain text/enriched text/html application/pgp application/postscript image/*
 
 source ~/.mutt/dirs.muttrc
+source ~/.mutt/abook.muttrc
 source ~/.mutt/bindings.muttrc
 source ~/.mutt/mail.muttrc
 source ~/.mutt/colors.muttrc
