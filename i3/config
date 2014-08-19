@@ -26,7 +26,7 @@ font pango:agave 11
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-bindsym Mod1+F2 exec gmrun
+bindsym Mod1+F2 exec mmrun
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
