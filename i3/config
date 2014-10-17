@@ -127,6 +127,9 @@ bindsym XF86AudioLowerVolume exec amixer set Master 5%-
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
 bindsym XF86AudioMute exec amixer set Master toggle
 
+# TouchPad
+bindsym XF86TouchpadToggle exec ~/.i3/touchpadtoggle.sh
+
 exec ~/.i3/autostart.sh
 
 # colors
@@ -143,6 +146,7 @@ for_window [class="Skype"] floating enable
 for_window [class="Pidgin"] floating enable
 for_window [class="Seafile-applet"] floating enable
 for_window [class="Seafile-applet"] border none
+for_window [title="Danmaku"] floating enable
 for_window [class="Firefox" title="DownThemAll!(.*)"] floating enable
 
 # resize window (you can also use the mouse for that)
