@@ -130,6 +130,10 @@ bindsym XF86AudioMute exec amixer set Master toggle
 # TouchPad
 bindsym XF86TouchpadToggle exec ~/.i3/touchpadtoggle.sh
 
+# Backlight
+bindsym XF86MonBrightnessUp  exec  xbacklight -inc 10
+bindsym XF86MonBrightnessDown  exec  xbacklight -dec 10
+
 exec ~/.i3/autostart.sh
 
 # colors

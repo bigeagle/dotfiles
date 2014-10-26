@@ -4,5 +4,5 @@ nitrogen --restore &
 dropboxd &
 fcitx &
 nm-applet &
-xfce4-power-manager &
+# xfce4-power-manager &
 (sleep 10; pnmixer ) &
