@@ -13,6 +13,8 @@ source ~/.mutt/bindings.muttrc
 source ~/.mutt/mail.muttrc
 source ~/.mutt/colors.muttrc
 source ~/.mutt/charset.muttrc
+source ~/.mutt/gpg.muttrc
+source /usr/share/doc/mutt/samples/gpg.rc
 
 set editor = "nvim"
 set mail_check = 0
