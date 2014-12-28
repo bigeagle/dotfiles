@@ -1,0 +1,8 @@
+[Unit]
+Description=Crontjob for offlineimap
+
+[Timer]
+OnUnitActiveSec=3min
+
+[Install]
+WantedBy=multi-user.target
