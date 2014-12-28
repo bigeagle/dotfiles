@@ -183,7 +183,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     status_command ~/.i3/i3-conky.sh
-    font pango:agave 10
+    font pango:agave 11
     tray_output eDP1
     
     colors {
