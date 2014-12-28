@@ -1,16 +1,29 @@
-macro index <F8> \
-"<enter-command>set my_old_pipe_decode=\$pipe_decode my_old_wait_key=\$wait_key nopipe_decode nowait_key<enter>\
-<shell-escape>notmuch-mutt -r --prompt search<enter>\
-<change-folder-readonly>`echo ${XDG_CACHE_HOME:-$HOME/.cache}/notmuch/mutt/results`<enter>\
-<enter-command>set pipe_decode=\$my_old_pipe_decode wait_key=\$my_old_wait_key<enter>" \
-"notmuch: search mail"
+set virtual_spoolfile=yes
 
-macro index <F9> \
-"<enter-command>set my_old_pipe_decode=\$pipe_decode my_old_wait_key=\$wait_key nopipe_decode nowait_key<enter>\
-<pipe-message>notmuch-mutt -r thread<enter>\
-<change-folder-readonly>`echo ${XDG_CACHE_HOME:-$HOME/.cache}/notmuch/mutt/results`<enter>\
-<enter-command>set pipe_decode=\$my_old_pipe_decode wait_key=\$my_old_wait_key<enter>" \
-"notmuch: reconstruct thread"
+virtual-mailboxes \
+    "INBOX"     "notmuch://?query=tag:inbox"\
+    "Pin"       "notmuch://?query=tag:pin"\
+    "Unread"    "notmuch://?query=tag:unread and NOT folder:spam"\
+    "Starred"   "notmuch://?query=tag:*"\
+    "Sent"      "notmuch://?query=from:justin.w.xd@gmail.com or from:yz-wang12@mails.tsinghua.edu.cn or from:bigeagle@xdlinux.info and NOT folder:SMS"\
+    "TUNA"      "notmuch://?query=tag:tuna"\
+    "NICS"      "notmuch://?query=tag:nics"
+
+tag-transforms \
+    "unread" "♨" \
+    "replied" "✔" \
+    "pin" "★" \
+    "tuna" "TUNA" \
+    "nics" "NICS"
+
+set nm_hidden_tags = "inbox,signed,encrypted,flagged,passed"     
+
+# macro index <F8> \
+# "<enter-command>set my_old_pipe_decode=\$pipe_decode my_old_wait_key=\$wait_key nopipe_decode nowait_key<enter>\
+# <shell-escape>notmuch-mutt -r --prompt search<enter>\
+# <change-folder-readonly>`echo ${XDG_CACHE_HOME:-$HOME/.cache}/notmuch/mutt/results`<enter>\
+# <enter-command>set pipe_decode=\$my_old_pipe_decode wait_key=\$my_old_wait_key<enter>" \
+# "notmuch: search mail"
 
 
 # vim: filetype=muttrc

@@ -2,9 +2,9 @@
 #     "<save-message>+[Gmail]/Trash<enter>" \
 #     "move message to the trash"
 
-macro index S \
-    "<save-message>+spam<enter>" \
-    "mark message as spam"
+# macro index S \
+#     "<save-message>+spam<enter>" \
+#     "mark message as spam"
 
 bind index gg first-entry
 bind index G last-entry
@@ -15,8 +15,20 @@ bind pager G bottom
 bind index,pager r group-reply
 bind index,pager R reply
 
-macro index,pager,attach gi "<change-folder>=INBOX<enter>" "Go to inbox"
-macro index,pager,attach gs "<change-folder>=sent<enter>" "Go to inbox"
-macro index,pager,attach gd "<change-folder>=drafts<enter>" "Go to drafts"
+bind index J sidebar-next
+bind index K sidebar-prev
+bind index L sidebar-open
+
+macro index \\\\ "<vfolder-from-query>"              # looks up a hand made query
+
+# sidebar toggle
+macro index ,@) "<enter-command> set sidebar_visible=no; macro index ~ ,@( 'Toggle sidebar'<Enter>"
+macro index ,@( "<enter-command> set sidebar_visible=yes; macro index ~ ,@) 'Toggle sidebar'<Enter>"
+macro index ~ ,@) 'Toggle sidebar'      # toggle the sidebar
+
+
+# macro index,pager,attach gi "<change-folder>=INBOX<enter>" "Go to inbox"
+# macro index,pager,attach gs "<change-folder>=sent<enter>" "Go to inbox"
+# macro index,pager,attach gd "<change-folder>=drafts<enter>" "Go to drafts"
 
 # vim: filetype=muttrc

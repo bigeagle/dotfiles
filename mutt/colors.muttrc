@@ -32,4 +32,6 @@ color index green default 通知|紧急
 color index brightyellow default  ~N
 color index brightgreen   default ~O
 
+color sidebar_new yellow default
+
 # vim: filetype=muttrc

@@ -13,7 +13,6 @@ source ~/.mutt/bindings.muttrc
 source ~/.mutt/mail.muttrc
 source ~/.mutt/colors.muttrc
 source ~/.mutt/charset.muttrc
-source /usr/share/doc/mutt/samples/gpg.rc
 source ~/.mutt/gpg.muttrc
 source ~/.mutt/notmuch.muttrc
 
@@ -31,6 +30,7 @@ set sort     = threads
 set sort_aux = reverse-last-date-received
 set sort_re
 
+
 # look and feel
 set pager_index_lines = 10
 set pager_context     = 10
@@ -39,6 +39,13 @@ set menu_scroll
 set smart_wrap
 set tilde
 unset markers
+
+set date_format="%y-%m-%d %H:%M"
+set index_format="%Z [%D] %-20n %s %> %?g?[%g ]?"
+
+# sidebar
+set sidebar_width   = 20
+set sidebar_visible = yes               # set to "no" to disable sidebar view at startup
 
 # composing 
 set fcc_attach
