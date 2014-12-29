@@ -10,6 +10,7 @@ virtual-mailboxes \
     "NICS"      "notmuch://?query=tag:nics"
 
 tag-transforms \
+    "attachment" "⌘" \
     "unread" "♨" \
     "replied" "✔" \
     "pin" "★" \

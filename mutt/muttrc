@@ -29,6 +29,7 @@ unset mark_old       # read/new is good enough for me
 set sort     = threads
 set sort_aux = reverse-last-date-received
 set sort_re
+set strict_threads=no
 
 
 # look and feel
@@ -41,10 +42,10 @@ set tilde
 unset markers
 
 set date_format="%y-%m-%d %H:%M"
-set index_format="%Z [%D] %-20n %s %> %?g?[%g ]?"
-
+# set index_format="%Z [%D] %-20n ¦ %s %> %?g?[%g]?"
+set index_format	= "%4C %Z %<[1y?%<[1d?%[  %H:%M]&%[ %b %d]>&%[%y-%b-%d]>  %-18.18n ¦  %s %* %?g?%g?"
 # sidebar
-set sidebar_width   = 20
+set sidebar_width   = 16
 set sidebar_visible = yes               # set to "no" to disable sidebar view at startup
 
 # composing 
