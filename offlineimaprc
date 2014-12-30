@@ -16,6 +16,7 @@ status_backend = sqlite
 # only changes were to IMAP flags
 # quick = 10
 postsynchook = /usr/bin/notmuch new
+maxage = 64
 
 [Repository gmail-local]
 # Currently, offlineimap only supports maildir and IMAP for local repositories.
