@@ -1,35 +1,48 @@
-color normal cyan default
-color hdrdefault red default
-color quoted green default
-color signature red default
-color indicator brightwhite red 
+color normal color231 default
+color hdrdefault color202 default
+color quoted color250 default
+color quoted1 color244 default
+color quoted2 color244 default
+color quoted3 color244 default
+color signature color030 default
+color indicator brightcolor230 color031
 color error brightred black
-color status white blue
-color tree cyan default	# the thread tree in the index menu
+color status color245 color237
+color tree color250 default	# the thread tree in the index menu
 color tilde white default
 color message brightcyan black
 color markers brightcyan black
-color attachment brightmagenta black
+color attachment color179 default
 color search black green	# how to hilite search patterns in the pager
 
-color header brightred default ^from
-color header blue default ^to
-color header blue default ^cc
-color header brightcyan default ^subject
-color header brightgreen default ^date
-color body blue default "(ftp|http|https)://[^ ]+"	# point out URLs
+color header color202 default ^from
+color header color031 default ^to
+color header color031 default ^cc
+color header brightcolor208 default ^subject
+color header color155 default ^date
+
+
+# color body color244 default "^>.*"
+# color body color231 default "^[^>]+"
+
+color body color045 default "(ftp|http|https)://[^ ]+"	# point out URLs
 # email addresses
-color body brightblue  black "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
-mono  body bold              "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
+color body color045 default "<?[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+>?"
 
-color body white default ^[^>]*
-color body yellow default ^>>.*
-color body cyan default ^>[^>].*
-color body cyan default ^>[^>]*
+# color body color248 default ^>[^>].*
+# color body color248 default ^>[^>]*
 
-# color underline brightgreen black
-color index green default 通知|紧急
-color index brightyellow default  ~N
-color index brightgreen   default ~O
+color index color250 default ".*"
+color index color231 default 通知|紧急
+color index brightcolor230 default  ~N
+# color index color195  default "~Y '\W?tuna\W?'"
+
+
+color body color084 default "^gpg: Good signature .*"
+color body brightcolor196 default "^gpg: BAD signature from.*"
+color body color241 default "^gpg: .* aka .*"
+
+color sidebar color240 default
+color sidebar_new color204 default
 
 # vim: filetype=muttrc

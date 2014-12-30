@@ -15,7 +15,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 10
+font pango:agave 11
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -26,7 +26,7 @@ font pango:DejaVu Sans Mono 10
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-bindsym Mod1+F2 exec gmrun
+bindsym Mod1+F2 exec mmrun
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -127,6 +127,13 @@ bindsym XF86AudioLowerVolume exec amixer set Master 5%-
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
 bindsym XF86AudioMute exec amixer set Master toggle
 
+# TouchPad
+bindsym XF86TouchpadToggle exec ~/.i3/touchpadtoggle.sh
+
+# Backlight
+bindsym XF86MonBrightnessUp  exec  xbacklight -inc 10
+bindsym XF86MonBrightnessDown  exec  xbacklight -dec 10
+
 exec ~/.i3/autostart.sh
 
 # colors
@@ -137,7 +144,14 @@ client.unfocused        #1d1d1d #1d1d1d #555555 #292d2e
 client.urgent           #d64937 #d64937 #ffffff #900000
 
 for_window [window_role="pop-up"] floating enable
+for_window [class="Xfce4-notifyd"] border none
 for_window [class="Xfce4-notifyd"] floating enable
+for_window [class="Skype"] floating enable
+for_window [class="Pidgin"] floating enable
+for_window [class="Seafile-applet"] floating enable
+for_window [class="Seafile-applet"] border none
+for_window [title="Danmaku"] floating enable
+for_window [class="Firefox" title="DownThemAll!(.*)"] floating enable
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -169,16 +183,16 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     status_command ~/.i3/i3-conky.sh
-    font pango:DejaVu Sans Mono 9
+    font pango:agave 11
     tray_output eDP1
     
     colors {
         background #000000
         separator #888888
         statusline #2d2d2d
-        focused_workspace #888888 #888888 #f9f9f9
-        active_workspace #2d2d2d #2d2d2d #dedede
-        inactive_workspace #2d2d2d #2d2d2d #888888
-        urgent_workspace #d64937 #d64937 #f9f9f9
+        focused_workspace     #dedede 		#dedede 	#000000
+        active_workspace      #333333 		#333333 	#cccccc 
+        inactive_workspace    #333333 		#333333 	#cccccc
+        urgent_workspace      #d64937 		#d64937 	#FFFFFF
     }
 }

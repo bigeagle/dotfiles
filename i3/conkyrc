@@ -81,5 +81,9 @@ TEXT
     {
         "full_text": "${time %Y-%m-%d %H:%M:%S %a}",
         "color": "\#fffad0"
+    },
+    {
+        "full_text": "${battery_short BAT0}",
+        "color": ${if_match ${battery_percent}>80}"\#f4f4f4"${else}${if_match ${battery_percent}<20}"\#ff4400"${else}"\#8be9e3"${endif}${endif}
     }
 ],
