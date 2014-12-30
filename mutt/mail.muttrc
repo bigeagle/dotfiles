@@ -1,7 +1,7 @@
 # main options
 set realname   = "Justin Wong"
-set from       = "justin.w.xd@gmail.com"
-my_hdr Reply-To: justin.w.xd@gmail.com
+set from       = "i@bigeagle.me"
+my_hdr Reply-To: i@bigeagle.me
 set indent_str = "> "
 set include 
 set use_from
@@ -14,7 +14,7 @@ set mailcap_path    = ~/.mutt/mailcap
 
 macro generic "<esc>1" ":my_hdr Reply-To: justin.w.xd@gmail.com<enter>:set from=justin.w.xd@gmail.com"
 macro generic "<esc>2" ":my_hdr Reply-To: yz-wang12@mails.tsinghua.edu.cn<enter>:set from=yz-wang12@mails.tsinghua.edu.cn"
-macro generic "<esc>3" ":my_hdr Reply-To: master@bigeagle.me<enter>:set from=master@bigeagle.me"
+macro generic "<esc>3" ":my_hdr Reply-To: i@bigeagle.me<enter>:set from=i@bigeagle.me"
 macro generic "<esc>4" ":my_hdr Reply-To: bigeagle@xdlinux.info<enter>:set from=bigeagle@xdlinux.info"
 
 # vim: filetype=muttrc
