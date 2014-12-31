@@ -1,5 +1,5 @@
 #!/bin/bash
-notmuch tag +spam -new -inbox -- tag:new AND folder:spam
+notmuch tag +spam -new -inbox -- tag:inbox AND folder:spam
 notmuch tag -new -inbox -- tag:inbox AND folder:SMS
 notmuch tag +tuna -- 'tag:new AND (to:tuna- OR to:thu-opensource-mirror)'
 notmuch tag +nics -- 'tag:new AND (yu-wang@*tsinghua.edu.cn OR yanghz@tsinghua.edu.cn)'
