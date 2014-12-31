@@ -34,7 +34,7 @@ color body color045 default "<?[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+>?"
 
 color index color250 default ".*"
 color index color231 default 通知|紧急
-color index brightcolor230 default  ~N
+color index brightcolor155 default  ~N
 # color index color195  default "~Y '\W?tuna\W?'"
 
 

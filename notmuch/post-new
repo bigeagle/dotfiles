@@ -1,7 +1,8 @@
 #!/bin/bash
-notmuch tag +spam -unread -inbox -- tag:unread AND folder:spam
-notmuch tag -unread -inbox -- tag:unread AND folder:SMS
-notmuch tag +tuna -- 'tag:unread AND (to:tuna- OR to:thu-opensource-mirror)'
-notmuch tag +nics -- 'tag:unread AND (yu-wang@*tsinghua.edu.cn OR yanghz@tsinghua.edu.cn)'
+notmuch tag +spam -new -inbox -- tag:new AND folder:spam
+notmuch tag -new -inbox -- tag:inbox AND folder:SMS
+notmuch tag +tuna -- 'tag:new AND (to:tuna- OR to:thu-opensource-mirror)'
+notmuch tag +nics -- 'tag:new AND (yu-wang@*tsinghua.edu.cn OR yanghz@tsinghua.edu.cn)'
 notmuch tag -unread 'tag:unread AND path:INBOX/cur'
 notmuch tag -unread 'tag:unread AND folder:sent'
+notmuch tag -new -- 'tag:new'
