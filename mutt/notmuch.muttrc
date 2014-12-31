@@ -5,19 +5,21 @@ virtual-mailboxes \
     "Pin"       "notmuch://?query=tag:pin"\
     "Unread"    "notmuch://?query=tag:unread and NOT folder:spam"\
     "Starred"   "notmuch://?query=tag:*"\
-    "Sent"      "notmuch://?query=(from:justin.w.xd@gmail.com or from:yz-wang12@mails.tsinghua.edu.cn or from:bigeagle@xdlinux.info or from:i@bigeagle.me) and date:2M..0s and (not folder:SMS)"\
+    "Sent"      "notmuch://?query=tag:sent and date:2M..0s"\
     "TUNA"      "notmuch://?query=tag:tuna"\
     "NICS"      "notmuch://?query=tag:nics"
 
 tag-transforms \
     "attachment" "⌘" \
-    "unread" "♨" \
     "replied" "✔" \
     "pin" "★" \
+    "signed" "✎" \
+    "encrypted" "⚿" \
+    "athena" "❤" \
     "tuna" "TUNA" \
-    "nics" "NICS"
+    "nics" "NICS" \
 
-set nm_hidden_tags = "inbox,signed,encrypted,flagged,passed"     
+set nm_hidden_tags = "unread,draft,flagged,passed,inbox,sent"
 set nm_query_type = threads
 
 # macro index <F8> \

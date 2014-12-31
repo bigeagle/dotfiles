@@ -3,6 +3,7 @@ notmuch tag +spam -new -inbox -- tag:new AND folder:spam
 notmuch tag -new -inbox -- tag:inbox AND folder:SMS
 notmuch tag +tuna -- 'tag:new AND (to:tuna- OR to:thu-opensource-mirror)'
 notmuch tag +nics -- 'tag:new AND (yu-wang@*tsinghua.edu.cn OR yanghz@tsinghua.edu.cn)'
-notmuch tag -unread 'tag:unread AND path:INBOX/cur'
+notmuch tag +athena -- 'tag:new AND (rosieye1992 OR borui.ye)'
+notmuch tag +sent -- 'tag:new AND (from:yz-wang12 OR from:i@bigeagle.me OR from:bigeagle OR from:justin.w.xd OR from justinwxd OR from wangyz) AND (not folder:SMS)'
 notmuch tag -unread 'tag:unread AND folder:sent'
 notmuch tag -new -- 'tag:new'
