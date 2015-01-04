@@ -2,9 +2,8 @@ set virtual_spoolfile=yes
 
 virtual-mailboxes \
     "INBOX"     "notmuch://?query=tag:inbox and date:2M..0s"\
-    "Pin"       "notmuch://?query=tag:pin"\
+    "Pin"       "notmuch://?query=tag:flagged"\
     "Unread"    "notmuch://?query=tag:unread and NOT folder:spam"\
-    "Starred"   "notmuch://?query=tag:*"\
     "Sent"      "notmuch://?query=tag:sent and date:2M..0s"\
     "TUNA"      "notmuch://?query=tag:tuna"\
     "NICS"      "notmuch://?query=tag:nics"
@@ -12,14 +11,14 @@ virtual-mailboxes \
 tag-transforms \
     "attachment" "⌘" \
     "replied" "✔" \
-    "pin" "★" \
+    "flagged" "★" \
     "signed" "✎" \
     "encrypted" "⚿" \
     "athena" "❤" \
     "tuna" "TUNA" \
     "nics" "NICS" \
 
-set nm_hidden_tags = "unread,draft,flagged,passed,inbox,sent"
+set nm_hidden_tags = "unread,draft,passed,inbox,sent"
 set nm_query_type = threads
 
 # macro index <F8> \

@@ -25,17 +25,19 @@ type = Maildir
 localfolders = ~/.mail/gmail
 nametrans = lambda folder: re.sub("spam", "[Gmail]/Spam", 
                            re.sub("drafts", "[Gmail]/Drafts",
-                           re.sub("sent", "[Gmail]/Sent Mail", folder)))
+                           re.sub("sent", "[Gmail]/Sent Mail", 
+                           re.sub("pin", "[Gmail]/Starred", folder))))
 
 [Repository gmail-remote]
 # Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
 type = Gmail
 remoteuser = username
 remotepass = password
-folderfilter = lambda foldername: foldername in ['INBOX', 'SMS', '[Gmail]/Sent Mail', '[Gmail]/Spam', '[Gmail]/Drafts']
+folderfilter = lambda foldername: foldername in ['INBOX', 'SMS', '[Gmail]/Sent Mail', '[Gmail]/Spam', '[Gmail]/Drafts', '[Gmail]/Starred']
 nametrans = lambda folder: re.sub("^\[Gmail\]/Spam$", "spam", 
                            re.sub("^\[Gmail\]/Drafts$", "drafts",
-                           re.sub("^\[Gmail\]/Sent Mail$", "sent", folder)))
+                           re.sub("^\[Gmail\]/Sent Mail$", "sent", 
+                           re.sub("^\[Gmail\]/Starred$", "pin", folder))))
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 maxconnections = 3
 keepalive = 30
