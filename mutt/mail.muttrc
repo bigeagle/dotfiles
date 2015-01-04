@@ -12,9 +12,28 @@ set sendmail    = /usr/bin/msmtp
 
 set mailcap_path    = ~/.mutt/mailcap
 
-macro generic "<esc>1" ":my_hdr Reply-To: justin.w.xd@gmail.com<enter>:set signature=~/.mutt/signature<enter>:set from=justin.w.xd@gmail.com"
-macro generic "<esc>2" ":my_hdr Reply-To: yz-wang12@mails.tsinghua.edu.cn<enter>:set signature=~/.mutt/signature.thu<enter>:set from=yz-wang12@mails.tsinghua.edu.cn"
-macro generic "<esc>3" ":my_hdr Reply-To: i@bigeagle.me<enter>:set signature=~/.mutt/signature<enter>:set from=i@bigeagle.me"
-macro generic "<esc>4" ":my_hdr Reply-To: bigeagle@xdlinux.info<enter>:set signature=~/.mutt/signature<enter>:set from=bigeagle@xdlinux.info"
+macro generic "<esc>1" \
+":my_hdr Reply-To: justin.w.xd@gmail.com<enter>\
+:set signature=~/.mutt/signature<enter>\
+:set from=justin.w.xd@gmail.com" \
+"Account: gmail"
+
+macro generic "<esc>2" \
+":my_hdr Reply-To: yz-wang12@mails.tsinghua.edu.cn<enter>\
+:set signature=~/.mutt/signature.thu<enter>\
+:set from=yz-wang12@mails.tsinghua.edu.cn" \
+"Account: tsinghua"
+
+macro generic "<esc>3" \
+":my_hdr Reply-To: i@bigeagle.me<enter>\
+:set signature=~/.mutt/signature<enter>\
+:set from=i@bigeagle.me" \
+"Account: bigeagle"
+
+macro generic "<esc>4" \
+":my_hdr Reply-To: bigeagle@xdlinux.info<enter>\
+:set signature=~/.mutt/signature<enter>\
+:set from=bigeagle@xdlinux.info" \
+"Account: xdlinux"
 
 # vim: filetype=muttrc
