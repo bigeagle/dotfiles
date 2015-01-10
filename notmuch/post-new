@@ -1,10 +1,11 @@
 #!/bin/bash
 notmuch tag +spam -new -inbox -- tag:inbox AND folder:spam
 notmuch tag -new -inbox -- tag:inbox AND folder:SMS
-notmuch tag +tuna -- 'tag:new AND (to:tuna- OR to:thu-opensource-mirror)'
+notmuch tag +tuna -- 'tag:new and (to:tuna-*@googlegroups.com OR to:thu-opensource-mirror@)'
 notmuch tag +nics -- 'tag:new AND (yu-wang@*tsinghua.edu.cn OR yanghz@tsinghua.edu.cn)'
-notmuch tag +athena -- 'tag:new AND (rosieye1992 OR borui.ye)'
+notmuch tag +athena -- 'tag:new and (rosieye1992@ OR borui.ye@)'
 notmuch tag +sent -- 'tag:new AND (from:yz-wang12 OR from:i@bigeagle.me OR from:bigeagle OR from:justin.w.xd OR from justinwxd OR from wangyz) AND (not folder:SMS)'
 notmuch tag +sent -- '(not folder:SMS) AND (folder:sent) AND (not tag:sent)'
 notmuch tag -unread 'tag:unread AND folder:sent'
+sleep 1
 notmuch tag -new -- 'tag:new'
