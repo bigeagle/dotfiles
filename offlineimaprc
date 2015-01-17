@@ -33,7 +33,7 @@ nametrans = lambda folder: re.sub("spam", "[Gmail]/Spam",
 type = Gmail
 remoteuser = username
 remotepass = password
-folderfilter = lambda foldername: foldername in ['INBOX', 'SMS', '[Gmail]/Sent Mail', '[Gmail]/Spam', '[Gmail]/Drafts', '[Gmail]/Starred']
+folderfilter = lambda foldername: foldername in ['INBOX', 'SMS', 'THUEE', '[Gmail]/Sent Mail', '[Gmail]/Spam', '[Gmail]/Drafts', '[Gmail]/Starred']
 nametrans = lambda folder: re.sub("^\[Gmail\]/Spam$", "spam", 
                            re.sub("^\[Gmail\]/Drafts$", "drafts",
                            re.sub("^\[Gmail\]/Sent Mail$", "sent", 

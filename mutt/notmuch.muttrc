@@ -5,6 +5,7 @@ virtual-mailboxes \
     "Pin"       "notmuch://?query=tag:flagged"\
     "Unread"    "notmuch://?query=tag:unread and NOT folder:spam"\
     "Sent"      "notmuch://?query=tag:sent and date:2M..0s"\
+    "THUEE"     "notmuch://?query=tag:thuee"\
     "TUNA"      "notmuch://?query=tag:tuna"\
     "NICS"      "notmuch://?query=tag:nics"
 
@@ -17,6 +18,7 @@ tag-transforms \
     "athena" "❤" \
     "tuna" "TUNA" \
     "nics" "NICS" \
+    "thuee" "E"
 
 set nm_hidden_tags = "unread,draft,passed,inbox,sent"
 set nm_query_type = threads
