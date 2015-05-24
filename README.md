@@ -1,6 +1,6 @@
 # dotfiles
 
-My configuretion files for:
+My configuration files for:
 
 - i3wm, conky
 - gitconfig
