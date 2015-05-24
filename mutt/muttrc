@@ -16,7 +16,7 @@ source ~/.mutt/charset.muttrc
 source ~/.mutt/gpg.muttrc
 source ~/.mutt/notmuch.muttrc
 
-set editor = "nvim"
+set editor = "vim"
 set mail_check = 0
 set envelope_from
 unset move           # gmail does that
