@@ -10,6 +10,8 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $ALT Mod1
+set $Hyper Mod3
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -26,7 +28,8 @@ font pango:agave 11
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-bindsym Mod1+F2 exec mmrun
+bindsym $mod+r exec mmrun
+bindsym $ALT+F2 exec mmrun
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -92,6 +95,11 @@ bindsym $mod+F2 workspace F2
 bindsym $mod+F3 workspace F3
 bindsym $mod+F4 workspace F4
 bindsym $mod+F5 workspace F5
+bindsym $Hyper+1 workspace F1
+bindsym $Hyper+2 workspace F2
+bindsym $Hyper+3 workspace F3
+bindsym $Hyper+4 workspace F4
+bindsym $Hyper+5 workspace F5
 bindsym $mod+minus scratchpad show
 bindsym $mod+q  workspace back_and_forth
 
@@ -106,6 +114,11 @@ bindsym $mod+Shift+F2 move container to workspace F2
 bindsym $mod+Shift+F3 move container to workspace F3
 bindsym $mod+Shift+F4 move container to workspace F4
 bindsym $mod+Shift+F5 move container to workspace F5
+bindsym $Hyper+Shift+1 move container to workspace F1
+bindsym $Hyper+Shift+2 move container to workspace F2
+bindsym $Hyper+Shift+3 move container to workspace F3
+bindsym $Hyper+Shift+4 move container to workspace F4
+bindsym $Hyper+Shift+5 move container to workspace F5
 bindsym $mod+Shift+minus move scratchpad
 
 bindsym $mod+Shift+Left move container to output left
@@ -177,7 +190,8 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $Hyper+r mode "resize"
+bindsym $mod+Alt+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
