@@ -5,4 +5,5 @@ dropboxd &
 fcitx &
 nm-applet &
 # xfce4-power-manager &
-(sleep 10; pnmixer ) &
+python2 -u ~/.local/bin/udevedu &>/tmp/udevedu.log &
+(sleep 15; pnmixer ) &
