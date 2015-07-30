@@ -1,0 +1,23 @@
+IMAPAccount justin-gmail
+Host imap.gmail.com
+User justin.w.xd@gmail.com
+PassCmd "cat ~/.mail/gmail/.pass"
+SSLType IMAPS
+SSLVersions TLSv1.2
+
+IMAPStore gmail-remote
+Account justin-gmail 
+
+MaildirStore gmail-local
+Path ~/.mail/gmail/
+Inbox ~/.mail/gmail/INBOX/
+
+Channel gmail 
+Master :gmail-remote:
+Slave :gmail-local:
+Patterns INBOX THUEE "[Gmail]/Sent Mail" "[Gmail]/Starred"
+MaxMessages 1000
+Create Both
+Sync All
+SyncState *
+CopyArrivalDate yes

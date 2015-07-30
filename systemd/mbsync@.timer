@@ -1,5 +1,5 @@
 [Unit]
-Description=Crontjob for offlineimap
+Description=Crontjob for Mbsync
 
 [Timer]
 OnActiveSec=3min
