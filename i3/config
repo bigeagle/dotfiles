@@ -191,7 +191,7 @@ mode "resize" {
 }
 
 bindsym $Hyper+r mode "resize"
-bindsym $mod+Alt+r mode "resize"
+bindsym $mod+$ALT+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
