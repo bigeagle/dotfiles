@@ -2,7 +2,7 @@
 Description=Crontjob for offlineimap
 
 [Timer]
-OnActiveSec=3min
+OnUnitActiveSec=3min
 
 [Install]
 WantedBy=timers.target
