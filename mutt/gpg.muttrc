@@ -2,7 +2,7 @@ set pgp_use_gpg_agent = yes
 set pgp_create_traditional=no
 set pgp_sign_as = 865BAC3A
 set pgp_timeout = 60
-set crypt_autosign = no
+set crypt_autosign = yes
 set crypt_replysignencrypted=yes
 set crypt_verify_sig=yes
 
@@ -57,11 +57,11 @@ set pgp_clearsign_command="gpg --no-verbose --batch --quiet --output - %?p?--pas
 
 # create a pgp/mime encrypted attachment
 # set pgp_encrypt_only_command="pgpewrap gpg-2comp -v --batch --output - --encrypt --textmode --armor --always-trust -- -r %r -- %f"
-set pgp_encrypt_only_command="pgpewrap gpg --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust -- -r %r -- %f"
+set pgp_encrypt_only_command="pgpewrap gpg --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust -- -r %r i@bigeagle.me -- %f"
 
 # create a pgp/mime encrypted and signed attachment
 # set pgp_encrypt_sign_command="pgpewrap gpg-2comp %?p?--passphrase-fd 0? -v --batch --output - --encrypt --sign %?a?-u %a? --armor --always-trust -- -r %r -- %f"
-set pgp_encrypt_sign_command="pgpewrap gpg %?p?--passphrase-fd 0? --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust -- -r %r -- %f"
+set pgp_encrypt_sign_command="pgpewrap gpg %?p?--passphrase-fd 0? --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust -- -r %r i@bigeagle.me -- %f"
 
 # import a key into the public key ring
 set pgp_import_command="gpg --no-verbose --import %f"
@@ -80,6 +80,7 @@ set pgp_list_secring_command="gpg --no-verbose --batch --quiet --with-colons --l
 
 # fetch keys
 # set pgp_getkeys_command="pkspxycwrap %r"
+set pgp_getkeys_command="gpg --recv-key %r"
 
 # pattern for good signature - may need to be adapted to locale!
 
