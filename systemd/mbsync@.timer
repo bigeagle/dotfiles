@@ -2,6 +2,7 @@
 Description=Crontjob for Mbsync
 
 [Timer]
+OnBootSec=2min
 OnUnitActiveSec=3min
 
 [Install]
