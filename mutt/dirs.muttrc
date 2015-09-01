@@ -2,10 +2,10 @@ set mbox_type   = Maildir
 
 set folder      = ~/.mail/gmail
 set spoolfile   = "+INBOX"
-set postponed   = "+[Gmail]/.Drafts"
+set postponed   = "+drafts"
 # unset record
 set copy=yes
-set record="+[Gmail]/.Sent Mail"
+set record="+sent"
 
 mailboxes "+INBOX" "+drafts" "+sent" "+spam"
 

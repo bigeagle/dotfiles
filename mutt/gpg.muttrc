@@ -80,7 +80,7 @@ set pgp_list_secring_command="gpg --no-verbose --batch --quiet --with-colons --l
 
 # fetch keys
 # set pgp_getkeys_command="pkspxycwrap %r"
-set pgp_getkeys_command="gpg --recv-key %r"
+# set pgp_getkeys_command="gpg --recv-key %r"
 
 # pattern for good signature - may need to be adapted to locale!
 

@@ -15,7 +15,7 @@ Inbox ~/.mail/gmail/INBOX/
 Channel gmail 
 Master :gmail-remote:
 Slave :gmail-local:
-Patterns INBOX THUEE "[Gmail]/Sent Mail" "[Gmail]/Starred"
+Patterns INBOX THUEE "[Gmail]/Sent Mail" "[Gmail]/Starred" "[Gmail]/Drafts"
 MaxMessages 1000
 Create Both
 Sync All
