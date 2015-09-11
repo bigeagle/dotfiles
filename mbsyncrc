@@ -2,7 +2,7 @@ IMAPAccount bigeagle-fastmail
 Host mail.messagingengine.com
 Port 993
 User bigeagle@fastmail.com
-PassCmd 'cat ~/.mail/.pass'
+PassCmd "cat ~/.mail/.pass"
 PipelineDepth 1
 SSLType IMAPS
 SSLVersions TLSv1.2
