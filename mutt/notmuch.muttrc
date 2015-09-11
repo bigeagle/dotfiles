@@ -1,7 +1,7 @@
 set virtual_spoolfile=yes
 
 virtual-mailboxes \
-    "INBOX"     "notmuch://?query=tag:inbox and date:2M..0s"\
+    "INBOX"     "notmuch://?query=tag:inbox and NOT tag:spam and date:2M..0s"\
     "Pin"       "notmuch://?query=tag:flagged"\
     "Unread"    "notmuch://?query=tag:unread and NOT folder:spam"\
     "Sent"      "notmuch://?query=tag:sent and date:2M..0s"\
@@ -10,13 +10,13 @@ virtual-mailboxes \
     "NICS"      "notmuch://?query=tag:nics"
 
 tag-transforms \
-    "attachment" "⌘" \
-    "replied" "✔" \
-    "flagged" "★" \
-    "signed" "✎" \
-    "encrypted" "⚿" \
-    "athena" "❤" \
-    "tuna" "TUNA" \
+    "attachment" "⌘ " \
+    "replied" "✔ " \
+    "flagged" "★ " \
+    "signed" "✎ " \
+    "encrypted" "⚿ " \
+    "athena" "❤ " \
+    "tuna" "🐬 " \
     "nics" "NICS" \
     "thuee" "E"
 

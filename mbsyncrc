@@ -1,23 +1,41 @@
-IMAPAccount justin-gmail
-Host imap.gmail.com
-User justin.w.xd@gmail.com
-PassCmd "cat ~/.mail/gmail/.pass"
+IMAPAccount bigeagle-fastmail
+Host mail.messagingengine.com
+Port 993
+User bigeagle@fastmail.com
+PassCmd 'cat ~/.mail/.pass'
+PipelineDepth 1
 SSLType IMAPS
 SSLVersions TLSv1.2
 
-IMAPStore gmail-remote
-Account justin-gmail 
+IMAPStore bigeagle-remote
+Account bigeagle-fastmail
 
-MaildirStore gmail-local
-Path ~/.mail/gmail/
-Inbox ~/.mail/gmail/INBOX/
+MaildirStore bigeagle-local
+Path ~/.mail/
+Inbox ~/.mail/INBOX/
+Flatten "."
 
-Channel gmail 
-Master :gmail-remote:
-Slave :gmail-local:
-Patterns INBOX THUEE "[Gmail]/Sent Mail" "[Gmail]/Starred" "[Gmail]/Drafts"
+Channel fastmail-inbox
+Master :bigeagle-remote:
+Slave :bigeagle-local:
+Patterns INBOX
 MaxMessages 1000
-Create Both
+Create Slave
+Expunge Both
 Sync All
 SyncState *
 CopyArrivalDate yes
+
+Channel fastmail-rest
+Master :bigeagle-remote:
+Slave :bigeagle-local:
+Patterns Sent Drafts Spam THUEE "Org/TUNA"
+MaxMessages 1000
+Create Both
+Expunge Both
+Sync All
+SyncState *
+CopyArrivalDate yes
+
+Group fastmail
+Channels fastmail-inbox fastmail-rest
