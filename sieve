@@ -23,17 +23,17 @@ if header :regex "from" "(wanghanatbupt@gmail.com)|(bibaijin@gmail.com)|(kaizhan
   fileinto "INBOX.THUEE";
 } 
 # Useless
-elsif header :matches "from" ["*@linkedin.com", "*@plus.google.com"] {
+elsif address :matches "from" ["*@linkedin.com", "*@plus.google.com"] {
   fileinto "INBOX.Trash";
 }
 # TUNA issues
-elsif header :matches "from" "issues+*@tuna.tsinghua.edu.cn" {
+elsif address :matches "from" "issues+*@tuna.tsinghua.edu.cn" {
   keep;
   setflag "Seen";
   fileinto "INBOX.Work.tuna-issues";
 }
 # Github
-elsif header :is "from" ["notifications@github.com"] {
+elsif address :is "from" ["notifications@github.com"] {
   fileinto "INBOX.Work.Github";
 }
 # Mailing lists
@@ -41,7 +41,7 @@ elsif header :is "from" ["notifications@github.com"] {
 # TUNA
 elsif header :is ["list-id", "list-post"] ["<tuna-general.googlegroups.com>"] {
   # discard mail sent by me than received from mailing list again
-  if header :is "from" ["i@bigeagle.me"]
+  if address :is "from" ["i@bigeagle.me"]
   {
     discard;
   } else {
@@ -52,7 +52,7 @@ elsif header :is ["list-id", "list-post"] ["<tuna-general.googlegroups.com>"] {
 }
 # xdlinux
 elsif header :is ["list-id", "list-post"] ["<xidian_linux.googlegroups.com>"] {
-  if header :is "from" ["i@bigeagle.me"]
+  if address :is "from" ["i@bigeagle.me"]
   {
     discard;
   } else {
@@ -62,7 +62,7 @@ elsif header :is ["list-id", "list-post"] ["<xidian_linux.googlegroups.com>"] {
 # USTC
 elsif header :is ["list-id", "list-post"] ["<ustc_lug.googlegroups.com>"] {
   # discard mail sent by me than received from mailing list again
-  if header :is "from" ["i@bigeagle.me"]
+  if address :is "from" ["i@bigeagle.me"]
   {
     discard;
   } else {
@@ -75,7 +75,7 @@ elsif header :is ["list-id", "list-post"] ["<ustc_lug.googlegroups.com>"] {
 elsif header :regex "subject" "^(IEEE)|(\\[EDAS-CFP\\])" {
   fileinto "INBOX.Work.Academic";
 }
-elsif header :matches "from" "*@pycoders.com" {
+elsif address :matches "from" "*@pycoders.com" {
   fileinto "INBOX.News.Pycoders";
 }
 elsif header :regex "subject" "^Go Newsletter Issue" {
@@ -84,14 +84,14 @@ elsif header :regex "subject" "^Go Newsletter Issue" {
 elsif header :is ["list-id", "list-post"] "<arch-announce.archlinux.org>" {
   fileinto "INBOX.News.Arch-announce";
 }
-elsif header :contains ["list-id", "list-post"] "xqhs.mails.tsinghua.edu.cn" {
+elsif header :contains ["list-id", "list-post"] "xqhs@mails.tsinghua.edu.cn" {
   fileinto "INBOX.News.NewTHU";
 }
-elsif header :is "from" "noreply@batch.manong.io" {
+elsif address :is "from" "noreply@batch.manong.io" {
   fileinto "INBOX.News.CoderNews";
 }
 elsif allof (
-  header :is "from" "no-reply@arxiv.org",
+  address :is "from" "no-reply@arxiv.org",
   header :regex "subject" "^cs daily Subj-class mailing"
 ) {
   fileinto "INBOX.News.Arxiv";
