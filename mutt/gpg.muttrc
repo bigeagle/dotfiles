@@ -1,6 +1,5 @@
 set pgp_use_gpg_agent = yes
 set pgp_create_traditional=no
-set pgp_sign_as = 865BAC3A
 set pgp_timeout = 60
 set crypt_autosign = yes
 set crypt_replysignencrypted=yes
