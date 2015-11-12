@@ -72,7 +72,11 @@ elsif header :is ["list-id", "list-post"] ["<ustc_lug.googlegroups.com>"] {
 # }
 # Subscriptions
 # {
-elsif header :regex "subject" "^(IEEE)|(\\[EDAS-CFP\\])" {
+elsif anyof (
+  header :regex "subject" "^(IEEE)|(\\[EDAS-CFP\\])",
+  address :regex "from" "^IEEE",
+  address :matches "from" "*@ieee.org",
+) {
   fileinto "INBOX.Work.Academic";
 }
 elsif address :matches "from" "*@pycoders.com" {
