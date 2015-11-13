@@ -73,16 +73,19 @@ elsif header :is ["list-id", "list-post"] ["<ustc_lug.googlegroups.com>"] {
 # Subscriptions
 # {
 elsif anyof (
-  header :regex "subject" "^(IEEE)|(\\[EDAS-CFP\\])",
-  address :regex "from" "^IEEE",
-  address :matches "from" "*@ieee.org"
+  header :regex "subject" "^\\[EDAS-CFP\\]",
+  address :contains "from" "IEEE",
+  address :domain "from" "ieee.org"
 ) {
   fileinto "INBOX.Work.Academic";
 }
 elsif address :matches "from" "*@pycoders.com" {
   fileinto "INBOX.News.Pycoders";
 }
-elsif header :regex "subject" "^Go Newsletter Issue" {
+elsif anyof (
+  header :regex "subject" "^Go Newsletter Issue",
+  address :domain "from" "golangweekly.com"
+) {
   fileinto "INBOX.News.GoNewsletter";
 }
 elsif header :is ["list-id", "list-post"] "<arch-announce.archlinux.org>" {
