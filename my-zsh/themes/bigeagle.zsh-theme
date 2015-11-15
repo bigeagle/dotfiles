@@ -37,7 +37,7 @@ if [[ "$TERM" != "dumb" ]] && [[ "$DISABLE_LS_COLORS" != "true" ]]; then
   ZSH_THEME_GIT_PROMPT_DIRTY=""
   ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-  RPROMPT='$(vi_mode_prompt_info)${return_status}$(git_prompt_status)%{$reset_color%}${SSH_TTY:+"[%F{9}%n%f%F{7}@%f%F{3}%m%f]"}'
+  RPROMPT='$(vi_mode_prompt_info)${return_status}$(git_prompt_status)%{$reset_color%}${SSH_CONNECTION:+"[%F{9}%n%f%F{7}@%f%F{3}%m%f]"}'
 
   ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%} ✚"
   ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[blue]%} ✹"
