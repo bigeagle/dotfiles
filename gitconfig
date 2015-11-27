@@ -1,6 +1,7 @@
 [user]
 	name = bigeagle
 	email = justin.w.xd@gmail.com
+	signingkey = 865BAC3A
 [color]
   diff = auto
   status = auto
