@@ -7,6 +7,6 @@ set postponed   = "+Drafts"
 set copy=yes
 set record="+Sent"
 
-mailboxes "+INBOX" "+Drafts" "+Sent" "+Spam"
+mailboxes "+INBOX" "+Drafts" "+Sent" "+Spam" "+Trash"
 
 # vim: filetype=muttrc

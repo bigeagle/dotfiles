@@ -1,6 +1,5 @@
-# macro index D \
-#     "<save-message>+[Gmail]/Trash<enter>" \
-#     "move message to the trash"
+folder-hook . 'macro index,pager d ": unset resolve<enter><modify-labels>-inbox<enter>: set resolve<enter><save-message>=Trash<enter>"'
+folder-hook Trash macro index d "<delete-message>"
 
 # macro index S \
 #     "<save-message>+spam<enter>" \
@@ -19,13 +18,12 @@ bind index J sidebar-next
 bind index K sidebar-prev
 bind index L sidebar-open
 
-macro index \\\\ "<vfolder-from-query>"              # looks up a hand made query
+macro index / "<vfolder-from-query>"              # looks up a hand made query
 
 # sidebar toggle
 macro index ,@) "<enter-command> set sidebar_visible=no; macro index ~ ,@( 'Toggle sidebar'<Enter>"
 macro index ,@( "<enter-command> set sidebar_visible=yes; macro index ~ ,@) 'Toggle sidebar'<Enter>"
 macro index ~ ,@) 'Toggle sidebar'      # toggle the sidebar
-
 
 # macro index,pager,attach gi "<change-folder>=INBOX<enter>" "Go to inbox"
 # macro index,pager,attach gs "<change-folder>=sent<enter>" "Go to inbox"
