@@ -37,8 +37,8 @@ URxvt.color7:       #707880
 URxvt.color15:      #c5c8c6
 !
 URxvt.scrollBar:    false
-URxvt.font:         xft:Source Code Pro for Powerline:medium:pixelsize=15,xft:Symbola:pixelsize=15
-URxvt.boldFont:     xft:Source Code Pro for Powerline:bold:pixelsize=15,xft:Symbola:bold:pixelsize=15
+URxvt.font:         xft:Source Code Pro for Powerline:medium:pixelsize=16, xft:Symbola:pixelsize=12
+URxvt.boldFont:     xft:Source Code Pro for Powerline:bold:pixelsize=16, xft:Source Han Sans CN:bold:pixelsize=16, xft:Symbola:bold:pixelsize=12
 URxvt.letterSpace:  -2
 URxvt.cutchars:     `"()'*<>[]{|}"
 URxvt.iso14755:     false
