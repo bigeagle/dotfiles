@@ -1,0 +1,57 @@
+! special
+URxvt.depth:        32
+URxvt*foreground:   #e3e3e3
+URxvt*background:   [90]#1d1f21
+URxvt*cursorColor:  #c5c8c6
+!
+! ! black
+URxvt.color0:       #282a2e
+URxvt.color8:       #373b41
+!
+! ! red
+URxvt.color1:       #be3c3c
+URxvt.color9:       #cc6666
+!
+! ! green
+URxvt.color2:       #aab91d
+URxvt.color10:      #bfc772
+!
+! ! yellow
+URxvt.color3:       #ffbc24
+URxvt.color11:      #f0c674
+!
+! ! blue
+URxvt.color4:       #3290dd
+URxvt.color12:      #81a2be
+!
+! ! magenta
+URxvt.color5:       #874c9b
+URxvt.color13:      #b294bb
+!
+! ! cyan
+URxvt.color6:       #46bcae
+URxvt.color14:      #8abeb7
+!
+! ! white
+URxvt.color7:       #707880
+URxvt.color15:      #c5c8c6
+!
+URxvt.scrollBar:    false
+URxvt.font:         xft:Source Code Pro for Powerline:medium:pixelsize=15,xft:Symbola:pixelsize=15
+URxvt.boldFont:     xft:Source Code Pro for Powerline:bold:pixelsize=15,xft:Symbola:bold:pixelsize=15
+URxvt.letterSpace:  -2
+URxvt.cutchars:     `"()'*<>[]{|}"
+URxvt.iso14755:     false
+URxvt.iso14755_52:  false
+
+URxvt.perl-ext-common:          default,clipboard,keyboard-select,matcher
+URxvt.keysym.M-u:               perl:matcher:select
+URxvt.keysym.M-Escape:          perl:keyboard-select:activate
+URxvt.keysym.M-s:               perl:keyboard-select:search
+URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
+URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
+
+URxvt.matcher.rend.0: fg6
+URxvt.termName:       xterm
+
+! vim: expandtab
