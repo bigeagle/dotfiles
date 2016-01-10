@@ -18,7 +18,7 @@ bind index J sidebar-next
 bind index K sidebar-prev
 bind index L sidebar-open
 
-macro index / "<vfolder-from-query>"              # looks up a hand made query
+# macro index / "<vfolder-from-query>"              # looks up a hand made query
 
 # sidebar toggle
 macro index ,@) "<enter-command> set sidebar_visible=no; macro index ~ ,@( 'Toggle sidebar'<Enter>"
