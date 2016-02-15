@@ -2,6 +2,10 @@ require ["envelope", "imapflags", "fileinto", "reject", "notify", "vacation", "r
 
 # Anti Spam
 # ---------
+if address :matches "from" ["*@boaunit.com", "*@boa.com"] {
+  fileinto "INBOX.Trash";
+  stop;
+}
 if not header :contains ["X-Spam-known-sender"] "yes" {
   if allof(
     header :contains ["X-Backscatter"] "yes",
@@ -14,10 +18,6 @@ if not header :contains ["X-Spam-known-sender"] "yes" {
     fileinto "INBOX.Spam";
     stop;
   }
-}
-if address :matches "from" ["*@boaunit.com", "*@boa.com"] {
-  fileinto "INBOX.Trash";
-  stop;
 }
 # ---------
 
