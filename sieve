@@ -15,6 +15,10 @@ if not header :contains ["X-Spam-known-sender"] "yes" {
     stop;
   }
 }
+if address :matches "from" ["*@boaunit.com", "*@boa.com"] {
+  fileinto "INBOX.Trash";
+  stop;
+}
 # ---------
 
 
