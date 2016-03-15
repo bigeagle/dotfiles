@@ -10,7 +10,7 @@ virtual-mailboxes \
     "NICS"      "notmuch://?query=tag:nics"
 
 tag-transforms \
-    "attachment" "✳ " \
+    "attachment" "📎 " \
 	"replied" "↩ " \
     "flagged" "⭐ " \
     "signed" "✏ " \
