@@ -10,15 +10,15 @@ virtual-mailboxes \
     "NICS"      "notmuch://?query=tag:nics"
 
 tag-transforms \
-    "attachment" "⌘ " \
-    "replied" "✔ " \
-    "flagged" "★ " \
-    "signed" "✎ " \
-    "encrypted" "⚿ " \
-    "athena" "❤ " \
-    "tuna" "🐬 " \
-    "nics" "NICS" \
-    "thuee" "E"
+    "attachment" "✳  " \
+	"replied" "↩  " \
+    "flagged" "⭐  " \
+    "signed" "✏  " \
+	"encrypted" "🔐   " \
+    "athena" "❤  " \
+    "tuna" "🐬  " \
+    "nics" "🇳 " \
+    "thuee" "🇪 "
 
 set nm_hidden_tags = "unread,draft,passed,inbox,sent"
 set nm_query_type = threads
