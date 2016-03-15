@@ -43,7 +43,7 @@ unset markers
 
 set date_format="%y-%m-%d %H:%M"
 # set index_format="%Z [%D] %-20n ¦ %s %> %?g?[%g]?"
-set index_format	= "%4C %Z %<[1d?%[  %H:%M]&%[ %b %d]>  %-18.18n ¦  %s %* %?g?%g?"
+set index_format	= "%4C %Z %<[1d?%[  %H:%M]&%[ %b %d]>  %-18.18n ¦  %s %* %?g?%g? "
 # sidebar
 set sidebar_width   = 16
 set sidebar_visible = yes               # set to "no" to disable sidebar view at startup
