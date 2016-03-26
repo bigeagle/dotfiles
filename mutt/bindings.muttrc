@@ -12,7 +12,8 @@ bind pager k previous-line
 bind pager gg top
 bind pager G bottom
 bind index,pager r group-reply
-bind index,pager R reply
+bind index,pager <esc>r reply
+bind index <esc>d delete-message
 
 bind index J sidebar-next
 bind index K sidebar-prev

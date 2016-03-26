@@ -1,24 +1,26 @@
 set virtual_spoolfile=yes
 
 virtual-mailboxes \
-    "INBOX"     "notmuch://?query=tag:inbox and NOT tag:spam and date:2M..0s"\
-    "Pin"       "notmuch://?query=tag:flagged"\
-    "Unread"    "notmuch://?query=tag:unread and NOT folder:spam"\
-    "Sent"      "notmuch://?query=tag:sent and date:2M..0s"\
-    "THUEE"     "notmuch://?query=tag:thuee"\
-    "TUNA"      "notmuch://?query=tag:tuna"\
-    "NICS"      "notmuch://?query=tag:nics"
+	"INBOX"     "notmuch://?query=tag:inbox and NOT tag:spam and NOT folder:Trash and date:2M..0s"\
+	"Pin"       "notmuch://?query=tag:flagged and NOT folder:Trash"\
+	"Unread"    "notmuch://?query=tag:unread and NOT folder:spam and NOT folder:Trash"\
+	"Sent"      "notmuch://?query=tag:sent and NOT folder:Trash and date:2M..0s"\
+	"Drafts"    "notmuch://?query=folder:Drafts"\
+	"THUEE"     "notmuch://?query=tag:thuee and NOT folder:Trash"\
+	"TUNA"      "notmuch://?query=tag:tuna and NOT folder:Trash"\
+	"NICS"      "notmuch://?query=tag:nics and NOT folder:Trash"\
+	"Trash"		"notmuch://?query=folder:Trash"
 
 tag-transforms \
-    "attachment" "📎 " \
+	"attachment" "📎 " \
 	"replied" "↩ " \
-    "flagged" "⭐ " \
-    "signed" "✏ " \
+	"flagged" "⭐ " \
+	"signed" "✏ " \
 	"encrypted" "🔐  " \
-    "athena" "❤  " \
-    "tuna" "🐬 " \
-    "nics" "🇳 " \
-    "thuee" "🇪 "
+	"athena" "❤  " \
+	"tuna" "🐬 " \
+	"nics" "🇳 " \
+	"thuee" "🇪 "
 
 set nm_hidden_tags = "unread,draft,passed,inbox,sent"
 set nm_query_type = threads
