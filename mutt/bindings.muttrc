@@ -1,5 +1,4 @@
-folder-hook . 'macro index,pager d ": unset resolve<enter><modify-labels>-inbox<enter>: set resolve<enter><save-message>=Trash<enter>"'
-folder-hook Trash macro index d "<delete-message>"
+macro index,pager x ": unset resolve<enter><modify-labels>-inbox<enter>: set resolve<enter><save-message>=Trash<enter>"
 
 # macro index S \
 #     "<save-message>+spam<enter>" \
