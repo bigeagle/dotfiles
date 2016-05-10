@@ -30,15 +30,13 @@ if header :regex "from" "(wanghanatbupt@gmail.com)|(bibaijin@gmail.com)|(kaizhan
 elsif address :matches "from" ["*@linkedin.com", "*@plus.google.com"] {
   fileinto "INBOX.Trash";
 }
-# TUNA issues
-elsif address :matches "from" "issues+*@tuna.tsinghua.edu.cn" {
-  keep;
-  setflag "Seen";
-  fileinto "INBOX.Work.tuna-issues";
-}
 # Github
 elsif address :is "from" ["notifications@github.com"] {
   fileinto "INBOX.Work.Github";
+}
+# TUNAIVE
+elsif address :is "to" ["tunaive@bigeagle.me", "i+tunaive@bigeagle.me"] {
+  fileinto "INBOX.Work.Tunaive";
 }
 # Mailing lists
 # {
