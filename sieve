@@ -23,7 +23,7 @@ if not header :contains ["X-Spam-known-sender"] "yes" {
 
 
 # Department Notifications
-if header :regex "from" "(wanghanatbupt@gmail.com)|(bibaijin@gmail.com)|(kaizhang91@163.com)" {
+if header :regex "from" "(wanghanatbupt@gmail.com)|(bibaijin@gmail.com)|(kaizhang91@163.com)|(zhangk13@mails.tsinghua.edu.cn)" {
   fileinto "INBOX.THUEE";
 } 
 # Useless
