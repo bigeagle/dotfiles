@@ -21,7 +21,6 @@ if not header :contains ["X-Spam-known-sender"] "yes" {
 }
 # ---------
 
-
 # Department Notifications
 if header :regex "from" "(wanghanatbupt@gmail.com)|(bibaijin@gmail.com)|(kaizhang91@163.com)|(zhangk13@mails.tsinghua.edu.cn)" {
   fileinto "INBOX.THUEE";
@@ -37,6 +36,14 @@ elsif address :is "from" ["notifications@github.com"] {
 # TUNAIVE
 elsif address :is "to" ["tunaive@bigeagle.me", "i+tunaive@bigeagle.me"] {
   fileinto "INBOX.Work.Tunaive";
+}
+# TUNA workmail
+elsif allof (
+  address :matches ["to", "cc", "bcc"] ["*@tuna.tsinghua.edu.cn"],
+  address :is "from" ["yuzhi.wang@tuna.tsinghua.edu.cn", "i@bigeagle.me"]
+) {
+  discard;
+  # discard duplicated mails sent from me
 }
 # Mailing lists
 # {
@@ -70,7 +77,17 @@ elsif header :is ["list-id", "list-post"] ["<ustc_lug.googlegroups.com>"] {
   } else {
     fileinto "INBOX.Org.USTC";
   }
-} 
+}
+# centos-mirrors
+elsif header :is ["list-id", "list-post"] ["<centos-mirror.centos.org>"] {
+  if address :is "from" ["i@bigeagle.me", "mirroradmin@tuna.tsinghua.edu.cn"]
+  {
+    discard;
+  } else {
+    fileinto "INBOX.Project.centos-mirror";
+  }
+}
+
 # }
 # Subscriptions
 # {
