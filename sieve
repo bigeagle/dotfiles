@@ -48,7 +48,7 @@ elsif allof (
 # Mailing lists
 # {
 # TUNA
-elsif header :is ["list-id", "list-post"] ["<tuna-general.googlegroups.com>"] {
+elsif header :contains ["list-id", "list-post"] ["<tuna-general.googlegroups.com>"] {
   # discard mail sent by me than received from mailing list again
   if address :is "from" ["i@bigeagle.me"]
   {
@@ -60,8 +60,8 @@ elsif header :is ["list-id", "list-post"] ["<tuna-general.googlegroups.com>"] {
   }
 }
 # xdlinux
-elsif header :is ["list-id", "list-post"] ["<xidian_linux.googlegroups.com>"] {
-  if address :is "from" ["i@bigeagle.me"]
+elsif header :contains ["list-id", "list-post"] ["<xidian_linux.googlegroups.com>"] {
+  if header :is "from" ["i@bigeagle.me"]
   {
     discard;
   } else {
@@ -69,7 +69,7 @@ elsif header :is ["list-id", "list-post"] ["<xidian_linux.googlegroups.com>"] {
   }
 }
 # USTC
-elsif header :is ["list-id", "list-post"] ["<ustc_lug.googlegroups.com>"] {
+elsif header :contains ["list-id", "list-post"] ["<ustc_lug.googlegroups.com>"] {
   # discard mail sent by me than received from mailing list again
   if address :is "from" ["i@bigeagle.me"]
   {
@@ -79,7 +79,7 @@ elsif header :is ["list-id", "list-post"] ["<ustc_lug.googlegroups.com>"] {
   }
 }
 # centos-mirrors
-elsif header :is ["list-id", "list-post"] ["<centos-mirror.centos.org>"] {
+elsif header :contains ["list-id", "list-post"] ["<centos-mirror.centos.org>"] {
   if address :is "from" ["i@bigeagle.me", "mirroradmin@tuna.tsinghua.edu.cn"]
   {
     discard;
@@ -107,7 +107,7 @@ elsif anyof (
 ) {
   fileinto "INBOX.News.GoNewsletter";
 }
-elsif header :is ["list-id", "list-post"] "<arch-announce.archlinux.org>" {
+elsif header :contains ["list-id", "list-post"] "<arch-announce.archlinux.org>" {
   fileinto "INBOX.News.Arch-announce";
 }
 elsif header :contains ["list-id", "list-post"] "xqhs@mails.tsinghua.edu.cn" {
