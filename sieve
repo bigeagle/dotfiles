@@ -33,6 +33,10 @@ elsif address :matches "from" ["*@linkedin.com", "*@plus.google.com"] {
 elsif address :is "from" ["notifications@github.com"] {
   fileinto "INBOX.Work.Github";
 }
+# AUR
+elsif address :is "from" ["notify@aur.archlinux.org"] {
+  fileinto "INBOX.Community.AUR";
+}
 # TUNAIVE
 elsif address :is "to" ["tunaive@bigeagle.me", "i+tunaive@bigeagle.me"] {
   fileinto "INBOX.Work.Tunaive";
@@ -84,7 +88,7 @@ elsif header :contains ["list-id", "list-post"] ["<centos-mirror.centos.org>"] {
   {
     discard;
   } else {
-    fileinto "INBOX.Project.centos-mirror";
+    fileinto "INBOX.Community.centos-mirror";
   }
 }
 
