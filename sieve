@@ -1,4 +1,4 @@
-require ["envelope", "imapflags", "fileinto", "reject", "notify", "vacation", "regex", "relational", "comparator-i;ascii-numeric", "body", "copy"];
+require ["envelope", "imapflags", "fileinto", "reject", "notify", "vacation", "regex", "relational", "comparator-i;ascii-numeric", "body", "copy", "subaddress"];
 
 # Anti Spam
 # ---------
@@ -41,6 +41,13 @@ elsif address :is "from" ["notify@aur.archlinux.org"] {
 elsif address :is "to" ["tunaive@bigeagle.me", "i+tunaive@bigeagle.me"] {
   fileinto "INBOX.Work.Tunaive";
 }
+# Jobs
+elsif allof (
+  address :domain "to" "bigeagle.me",
+  address :user "to" "job"
+) {
+  fileinto "INBOX.Work.Jobs";
+}
 # TUNA workmail
 elsif allof (
   address :matches ["to", "cc", "bcc"] ["*@tuna.tsinghua.edu.cn"],
@@ -48,6 +55,10 @@ elsif allof (
 ) {
   discard;
   # discard duplicated mails sent from me
+}
+# Shetuan
+elsif address :contains ["to", "from"] ["shetuan@mail.tsinghua.edu.cn"] {
+  fileinto "INBOX.Work.Shetuan";
 }
 # Mailing lists
 # {
@@ -58,9 +69,10 @@ elsif header :contains ["list-id", "list-post"] ["<tuna-general.googlegroups.com
   {
     discard;
   } else {
-    keep;
-    setflag "Seen";
     fileinto "INBOX.Org.TUNA";
+    notify :method "mailto"
+           :options ["trigger@recipe.ifttt.com"]
+           :message "/New mail in tuna-general #tuna/";
   }
 }
 # xdlinux
@@ -89,6 +101,30 @@ elsif header :contains ["list-id", "list-post"] ["<centos-mirror.centos.org>"] {
     discard;
   } else {
     fileinto "INBOX.Community.centos-mirror";
+  }
+}
+elsif header :contains ["list-id", "list-post"] ["<arch-mirrors.archlinux.org>"] {
+  if address :is "from" ["i@bigeagle.me", "mirroradmin@tuna.tsinghua.edu.cn"]
+  {
+    discard;
+  } else {
+    fileinto "INBOX.Community.arch-mirror";
+  }
+}
+elsif header :contains ["list-id", "list-post"] ["<arch-mirrors.archlinux.org>"] {
+  if address :is "from" ["i@bigeagle.me", "mirroradmin@tuna.tsinghua.edu.cn"]
+  {
+    discard;
+  } else {
+    fileinto "INBOX.Community.arch-mirror";
+  }
+}
+elsif address :matches "to" "mirror@opensuse.org" {
+  if address :is "from" ["i@bigeagle.me", "mirroradmin@tuna.tsinghua.edu.cn"]
+  {
+    discard;
+  } else {
+    fileinto "INBOX.Community.suse-mirror";
   }
 }
 
