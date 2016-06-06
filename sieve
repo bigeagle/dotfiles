@@ -26,7 +26,7 @@ if header :regex "from" "(wanghanatbupt@gmail.com)|(bibaijin@gmail.com)|(kaizhan
   fileinto "INBOX.THUEE";
 } 
 # Useless
-elsif address :matches "from" ["*@linkedin.com", "*@plus.google.com"] {
+elsif address :matches "from" ["*@plus.google.com"] {
   fileinto "INBOX.Trash";
 }
 # Github
@@ -72,7 +72,7 @@ elsif header :contains ["list-id", "list-post"] ["<tuna-general.googlegroups.com
     fileinto "INBOX.Org.TUNA";
     notify :method "mailto"
            :options ["trigger@recipe.ifttt.com"]
-           :message "/New mail in tuna-general #tuna/";
+           :message "/ New mail in tuna-general #tuna /";
   }
 }
 # xdlinux
