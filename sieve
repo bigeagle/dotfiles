@@ -47,6 +47,9 @@ elsif allof (
   address :user "to" "job"
 ) {
   fileinto "INBOX.Work.Jobs";
+  notify :method "mailto"
+         :options ["trigger@recipe.ifttt.com"]
+         :message "/ New job related mail #job /";
 }
 # TUNA workmail
 elsif allof (
