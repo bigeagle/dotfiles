@@ -106,6 +106,7 @@ elsif header :contains ["list-id", "list-post"] ["<centos-mirror.centos.org>"] {
     fileinto "INBOX.Community.centos-mirror";
   }
 }
+# Arch mirrors
 elsif header :contains ["list-id", "list-post"] ["<arch-mirrors.archlinux.org>"] {
   if address :is "from" ["i@bigeagle.me", "mirroradmin@tuna.tsinghua.edu.cn"]
   {
@@ -114,20 +115,22 @@ elsif header :contains ["list-id", "list-post"] ["<arch-mirrors.archlinux.org>"]
     fileinto "INBOX.Community.arch-mirror";
   }
 }
-elsif header :contains ["list-id", "list-post"] ["<arch-mirrors.archlinux.org>"] {
-  if address :is "from" ["i@bigeagle.me", "mirroradmin@tuna.tsinghua.edu.cn"]
-  {
-    discard;
-  } else {
-    fileinto "INBOX.Community.arch-mirror";
-  }
-}
+# SUSE mirrors
 elsif address :matches "to" "mirror@opensuse.org" {
   if address :is "from" ["i@bigeagle.me", "mirroradmin@tuna.tsinghua.edu.cn"]
   {
     discard;
   } else {
     fileinto "INBOX.Community.suse-mirror";
+  }
+}
+# Fedora-CN
+elsif header :contains ["list-id", "list-post"] ["<chinese.lists.fedoraproject.org>"] {
+  if address :is "from" ["i@bigeagle.me"]
+  {
+    discard;
+  } else {
+    fileinto "INBOX.Community.fedora-cn";
   }
 }
 
