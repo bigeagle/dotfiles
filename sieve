@@ -22,7 +22,10 @@ if not header :contains ["X-Spam-known-sender"] "yes" {
 # ---------
 
 # Department Notifications
-if header :regex "from" "(wanghanatbupt@gmail.com)|(bibaijin@gmail.com)|(kaizhang91@163.com)|(zhangk13@mails.tsinghua.edu.cn)" {
+if allof (
+  address :matches "from" ["mjn13@mails.tsinghua.edu.cn"],
+  address :matches "to" ["changle4015@126.com"]
+) {
   fileinto "INBOX.THUEE";
 } 
 # Useless
@@ -58,6 +61,10 @@ elsif allof (
 ) {
   discard;
   # discard duplicated mails sent from me
+}
+# TUNA support
+elsif address :matches ["to", "cc"] ["support@tuna.tsinghua.edu.cn"] {
+  fileinto "INBOX.Work.tuna-issues";
 }
 # Shetuan
 elsif address :contains ["to", "from"] ["shetuan@mail.tsinghua.edu.cn"] {
