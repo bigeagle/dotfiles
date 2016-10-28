@@ -166,6 +166,7 @@ for_window [class="Seafile-applet"] floating enable
 for_window [class="Seafile-applet"] border none
 for_window [title="Danmaku"] floating enable
 for_window [title="Telegram"] floating enable
+for_window [title="Figure (.*)"] floating enable
 for_window [class="Firefox" title="DownThemAll!(.*)"] floating enable
 
 # resize window (you can also use the mouse for that)

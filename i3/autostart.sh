@@ -6,6 +6,6 @@ cbatticon &
 dropbox &
 fcitx &
 nm-applet &
-# xfce4-power-manager &
-python2 -u ~/.local/bin/udevedu &>/tmp/udevedu.log &
-(pulseaudio --start; sleep 5; pnmixer ) &
+blueman-applet &
+(sleep 5; pnmixer) &
+python3 -u /usr/bin/udevedu &>/tmp/udevedu.log &
