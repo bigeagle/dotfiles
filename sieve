@@ -28,6 +28,9 @@ if allof (
 ) {
   fileinto "INBOX.THUEE";
 } 
+elsif address :matches "from" ["dzxxsgz@tsinghua.edu.cn"] {
+  fileinto "INBOX.THUEE";
+}
 # Useless
 elsif address :matches "from" ["*@plus.google.com"] {
   fileinto "INBOX.Trash";
