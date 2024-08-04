@@ -20,16 +20,23 @@ function prompt_pwd {
   # fi
 }
 
+function venv_prompt_info {
+  if [[ -n "$VIRTUAL_ENV" ]]; then
+    echo "%{$fg[green]%}($(basename $VIRTUAL_ENV))%{$reset_color%} "
+  fi
+}
+
 if [[ "$TERM" != "dumb" ]] && [[ "$DISABLE_LS_COLORS" != "true" ]]; then
   MODE_INDICATOR="%{$fg_bold[red]%}❮%{$reset_color%}%{$fg[red]%}❮❮%{$reset_color%}"
   local return_status="%{$fg[red]%}%(?..⏎)%{$reset_color%}"
   local lreturn_status="%(?.%{%F{44}%B%}.%{%F{208}%B%})❯"
-  
+
   if [[ "$HOST_PROMPT_COLOR" == "" ]]; then
     HOST_PROMPT_COLOR="214"
   fi
-   
+
   # PROMPT='🐻 %{%F{45}%}$(prompt_pwd)$(git_prompt_info)%(!.%{$fg_bold[red]%}#.%{%F{$HOST_PROMPT_COLOR}%B%}❯)${lreturn_status}%{$reset_color%} '
+  # PROMPT='$(venv_prompt_info)%{%F{45}%}$(prompt_pwd)$(git_prompt_info)%(!.%{$fg_bold[red]%}#.%{%F{$HOST_PROMPT_COLOR}%B%}❯)${lreturn_status}%{$reset_color%} '
   PROMPT='%{%F{45}%}$(prompt_pwd)$(git_prompt_info)%(!.%{$fg_bold[red]%}#.%{%F{$HOST_PROMPT_COLOR}%B%}❯)${lreturn_status}%{$reset_color%} '
 
   # ZSH_THEME_GIT_PROMPT_PREFIX=" %{%F{69}%}[%{$fg[cyan]%}git%{$reset_color%}:%{$fg[red]%}"
@@ -46,10 +53,10 @@ if [[ "$TERM" != "dumb" ]] && [[ "$DISABLE_LS_COLORS" != "true" ]]; then
   ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[magenta]%} ➜"
   ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%} ═"
   ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ✭"
-else 
+else
   MODE_INDICATOR="❮❮❮"
   local return_status="%(?::⏎)"
-  
+
   PROMPT='%c$(git_prompt_info) %(!.#.❯) '
 
   ZSH_THEME_GIT_PROMPT_PREFIX=" git:"

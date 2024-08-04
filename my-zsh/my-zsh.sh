@@ -85,3 +85,14 @@ else
     fi
   fi
 fi
+
+
+prepend_path () {
+        for pentry in "$@"
+        do
+                case ":$PATH:" in
+                        (*":$pentry:"*)  ;;
+                        (*) export PATH="$pentry:$PATH"  ;;
+                esac
+        done
+}
