@@ -37,5 +37,5 @@ while read _path; do
 done < /etc/paths
 
 source $ZSH/my-zsh.sh
-#
+
 source ~/.zshrc.local
